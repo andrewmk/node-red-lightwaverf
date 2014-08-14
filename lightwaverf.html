@@ -1,0 +1,58 @@
+<script type="text/javascript">
+    RED.nodes.registerType('lightwaverf',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            dim: {value:""},
+            action: {value: ""},
+            room: {value: 0, validate:RED.validators.number() },
+            device: {value: 0, validate:RED.validators.number() },
+            ip: {value:"", type:"lightwaverf-wifi-link"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"lightwaverf";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="lightwaverf">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-room"><i class="icon-tag"></i> Room</label>
+        <input type="text" id="node-input-room">
+    </div>
+    <div class="form-row">
+        <label for="node-input-device"><i class="icon-tag"></i> Device</label>
+        <input type="text" id="node-input-device">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-ip"><i class="icon-tag"></i> Wifi Link IP</label>
+        <input type="text" id="node-input-ip" placeholder="192.168.1.2">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-action"><i class="icon-envelope"></i> Action</label>
+        <select id="node-input-action" style="width:125px !important">
+          <option value="on">on</option>
+          <option value="off">off</option>
+          <option value="dim">dim</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-dim"><i class="icon-tag"></i>Dim %</label>
+        <input type="text" id="node-input-dim" style="width:125px" placeholder="50">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="lightwaverf">
+    <p>sends on, off or dim commands to lightwaverf components</p>
+</script>
