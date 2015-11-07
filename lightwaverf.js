@@ -20,10 +20,10 @@ module.exports = function(RED) {
         	var msg;
         	var payload = "empty";
 
-                this.log("Room " + msg.room);
-                this.log("Device " + msg.device);
-                this.log("Action " + msg.action);
-                this.log("Dim " + msg.dim);
+                node.warn("Room " + msg.room);
+                node.warn("Device " + msg.device);
+                node.warn("Action " + msg.action);
+                node.warn("Dim " + msg.dim);
 
                 if (msg.room) {
                         room = msg.room;
@@ -50,30 +50,30 @@ module.exports = function(RED) {
                 }
 
         	if (action=="on"){
-        		this.log("turning the device " + device + " on, in room " + room);
+        		node.warn("turning the device " + device + " on, in room " + room);
         		lw.turnDeviceOn(room, device, function(error, content) {
                                 if (error) {
-                                        node.log(error);
+                                        node.error(error);
                                 } else {
-                                        node.log(content);
+                                        node.warn(content);
                                 }
                         });
         	} else if (action=="off"){
-        		this.log("turning the device " + device + " off, in room " + room);
+        		node.warn("turning the device " + device + " off, in room " + room);
         		lw.turnDeviceOff(room, device, function(error, content) {
                                 if (error) {
-                                        node.log(error);
+                                        node.error(error);
                                 } else {
-                                        node.log(content);
+                                        node.warn(content);
                                 }
                         });
         	} else if (action=="dim"){
-        		this.log("dimming the device " + device + " to " + dim + " in room " + room);
+        		node.warn("dimming the device " + device + " to " + dim + " in room " + room);
         		lw.setDeviceDim(room, device, dim, function(error, content) {
                                 if (error) {
-                                        node.log(error);
+                                        node.error(error);
                                 } else {
-                                        node.log(content);
+                                        node.warn(content);
                                 }
                         });
         	} 
