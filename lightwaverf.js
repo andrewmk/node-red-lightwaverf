@@ -20,10 +20,7 @@ module.exports = function(RED) {
         	var msg;
         	var payload = "empty";
 
-                node.warn("Room " + msg.room);
-                node.warn("Device " + msg.device);
-                node.warn("Action " + msg.action);
-                node.warn("Dim " + msg.dim);
+                node.warn("Room: " + msg.room + ", Device: " + msg.device + ", Action: " + msg.action + ", Dim: " + msg.dim);
 
                 if (msg.room) {
                         room = msg.room;
