@@ -1,0 +1,17 @@
+{
+  "name": "node-red-lightwaverf",
+  "version": "0.3.0",
+  "requires": true,
+  "keywords": [
+    "node-red"
+  ],
+  "node-red": {
+    "nodes": {
+      "lightwaverf-wifi-link": "lightwaverf-wifi-link.js",
+      "lightwaverf": "lightwaverf.js"
+    }
+  },
+  "dependencies": {
+    "lightwaverf": ">=0.0.1"
+  }
+}

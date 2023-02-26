@@ -31,7 +31,7 @@ module.exports = function(RED) {
                 if (msg.device) {
                         device = msg.device;
                 } else {
-                        room = config.device;
+                        device = config.device;
                 }
 
                 if (msg.action) {
